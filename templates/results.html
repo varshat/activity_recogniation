@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+
+</head>
+
+<body>
+<div class="container">
+  <div class="well">
+
+    <h1 style="text-align: center">Activity Recognition system based on Multi sensor data fusion Prediction </h1>
+</div>
+ <div class="well">
+
+ <h2 style="text-align: center">The Recognized Activity is {{prediction}}</h2>
+
+     <!-- Result  webp -->
+		<div class="results" style="text-align: center">
+			{% if prediction == "Bending Type 1" %}
+				<img class="gif" src="{{ url_for('static', filename='Bending1.gif') }}" style="height:50%; width:50%; text-align:center" alt="Bending Type 1">
+			{% elif prediction== "Bending Type 2" %}
+				<img class="gif" src="{{ url_for('static', filename='Bending2.gif') }}" style="height:50%; width:50%; text-align:center" alt="Bending Type 2">
+            {% elif prediction== "Cycling" %}
+				<img class="gif" src="{{ url_for('static', filename='cycling-bicycle.gif') }}" style="height:50%; width:50%; text-align:center"  alt="Cycling">
+            {% elif prediction== "Lying" %}
+				<img class="gif" src="{{ url_for('static', filename='laying.gif') }}" style="height:50%; width:50%; text-align:center"  alt="Lying">
+            {% elif prediction== "Sitting" %}
+				<img class="gif" src="{{ url_for('static', filename='sitting.gif') }}" style="height:50%; width:50%; text-align:center"  alt="Sitting">
+            {% elif prediction== "Standing" %}
+				<img class="gif" src="{{ url_for('static', filename='standing.gif') }}" style="height:50%; width:50%; text-align:center"  alt="Standing">
+            {% elif prediction== "Walking" %}
+				<img class="gif" src="{{ url_for('static', filename='walking.gif') }}" alt="Walking">
+			{% endif %}
+		</div>
+
+</div>
+</div>
+</body>
+
+</html>

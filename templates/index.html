@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+
+
+  <div class="well">
+
+    <h1 style="text-align: center">Activity Recognition system based on Multi sensor data fusion</h1>
+</div>
+    <div class="form">
+        <form action="/predict" method="POST">
+        <div class="form-group">
+            <label for="email" class="control-label col-sm-2">Average RSS 12:</label>
+            <input type="number" name="avg_rss12" id="avg_rss12" placeholder="Enter Average RSS 12" step="any"   class="form-control">
+            <label for="email" class="control-label col-sm-2">Variance RSS 12:</label>
+            <input type="number" name="var_rss12" id="var_rss12" placeholder="Enter Variance RSS 12" step="any"   class="form-control">
+        </div>
+
+        <div class="form-group">
+        <label for="email" class="control-label col-sm-2">Average RSS 13:</label>
+        <input type="number" name="avg_rss13" id="avg_rss13" placeholder="Enter Average RSS 13" step="any" class="form-control">
+        <label for="email" class="control-label col-sm-2">Variance RSS 13:</label>
+        <input type="number" name="var_rss13" id="var_rss13" placeholder="Enter Variance RSS 13" step="any" class="form-control">
+        </div>
+
+        <div class="form-group">
+        <label for="email" class="control-label col-sm-2">Average RSS 23:</label>
+        <input type="number" name="avg_rss23" id="avg_rss23" placeholder="Enter Average RSS 23" step="any"  class="form-control">
+        <label for="email" class="control-label col-sm-2">Variance RSS 23:</label>
+        <input type="number" name="var_rss23" id="var_rss23" placeholder="Enter Variance RSS 23" step="any"  class="form-control">
+        </div>
+
+
+        <div class="form-group" align="center">
+            <input type="submit" class="btn btn-primary" value="Predict">
+        </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
